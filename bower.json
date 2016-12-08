@@ -1,0 +1,10 @@
+{
+  "name": "bedrock-angular-authn-did-jwt",
+  "moduleType": [
+    "amd"
+  ],
+  "main": "./main.js",
+  "dependencies": {
+    "bedrock-angular": "^2.0.0"
+  }
+}
