@@ -1,70 +1,76 @@
-<div ng-if="$ctrl.display.form" class="row">
-  <div class="col-md-3"></div>
-  <div class="col-md-6">
-    <div class="text-center">
+<div ng-if="$ctrl.display.form">
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6" style="padding: 0">
       <h3>Email Login Token</h3>
       <p>Please enter the email address you used when you setup your account so that
       we may send you a login token.</p>
     </div>
-    <br>
-    <form name="$ctrl.emailForm" class="form-horizontal">
-      <fieldset>
-        <br-input br-model="$ctrl.email"
-          br-options="{
-            name: 'email', label: 'Email',
-            helpTogglePosition: 'label',
-            showValidation: true,
-            type: 'email',
-            columns: {
-              label: 'col-md-3',
-              input: 'col-md-7',
-              help: 'col-md-offset-3 col-md-7'
-            }
-          }" br-input-ng-disabled="$ctrl.loading" br-input-autocomplete="off"
-          ng-minlength="6" ng-maxlength="100" required>
-          <br-input-help>
-            Enter the Email address you used when you setup your account.
-          </br-input-help>
-          <br-input-validation-errors>
-            <p ng-show="$ctrl.regForm.email.$error.required">
-              Email is required.
-            </p>
-            <p ng-show="$ctrl.regForm.email.$error.email">
-              Email is not a valid email address.
-            </p>
-            <p ng-show="$ctrl.regForm.email.$error.minlength">
-              Email is required to be at least 6 characters.
-            </p>
-            <p ng-show="$ctrl.regForm.email.$error.maxlength">
-              Email must not be longer than 100 characters.
-            </p>
-          </br-input-validation-errors>
-        </br-input>
-      </fieldset>
-    </form>
-    <div class="col-md-offset-3 col-md-7">
+  </div>
+  <form name="$ctrl.emailForm" class="form-horizontal">
+    <fieldset>
+      <br-input br-model="$ctrl.email"
+        br-options="{
+          name: 'email', label: 'Email',
+          helpTogglePosition: 'label',
+          showValidation: true,
+          type: 'email',
+          columns: {
+            label: 'col-md-3',
+            input: 'col-md-6',
+            help: 'col-md-offset-3 col-md-6'
+          }
+        }" br-input-ng-disabled="$ctrl.loading" br-input-autocomplete="off"
+        ng-minlength="6" ng-maxlength="100" required>
+        <br-input-help>
+          Enter the Email address you used when you setup your account.
+        </br-input-help>
+        <br-input-validation-errors>
+          <p ng-show="$ctrl.regForm.email.$error.required">
+            Email is required.
+          </p>
+          <p ng-show="$ctrl.regForm.email.$error.email">
+            Email is not a valid email address.
+          </p>
+          <p ng-show="$ctrl.regForm.email.$error.minlength">
+            Email is required to be at least 6 characters.
+          </p>
+          <p ng-show="$ctrl.regForm.email.$error.maxlength">
+            Email must not be longer than 100 characters.
+          </p>
+        </br-input-validation-errors>
+      </br-input>
+    </fieldset>
+  </form>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6" style="padding: 0">
       <button type="button"
         ng-click="$ctrl.submit()"
         ng-disabled="$ctrl.emailForm.$invalid"
-        class="btn btn-primary">
-        Submit <i ng-show="$ctrl.loading" class="fa fa-refresh fa-spin"></i>
+        class="btn btn-primary btn-block">
+        Send Token <i ng-show="$ctrl.loading" class="fa fa-refresh fa-spin"></i>
       </button>
     </div>
   </div>
-  <div class="col-md-3"></div>
 </div>
 <div ng-if="$ctrl.display.success" class="row">
-  <div class="text-center">
+  <div class="col-md-12 text-center">
     <h3>Email Sent</h3>
     <p>Please click the link provided in the email to login.</p>
   </div>
 </div>
-<div ng-if="$ctrl.display.retry" class="row">
-  <div class="text-center">
-    <h3>Token Login Failed</h3>
-    <p>Your token may have expired, please try again.</p>
-    <button ng-click="$ctrl.show('form')" type="button" class="btn btn-primary">
-      Retry
-    </button>
+<div ng-if="$ctrl.display.retry">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Token Login Failed</h3>
+      <p>Your token may have expired, please try again.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-4 col-md-4">
+      <button ng-click="$ctrl.show('form')" type="button"
+        class="btn btn-primary btn-block">
+        Try Again
+      </button>
+    </div>
   </div>
 </div>
