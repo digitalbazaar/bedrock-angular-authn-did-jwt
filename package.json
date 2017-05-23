@@ -1,0 +1,20 @@
+{
+  "name": "bedrock-angular-authn-did-jwt",
+  "version": "1.0.0",
+  "description": "bedrock-angular-authn-did-jwt",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "~1.6.4"
+  },
+  "bedrock": {
+    "browserDependencies": "all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/bedrock-angular-authn-did-jwt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalbazaar/bedrock-angular-authn-did-jwt/issues"
+  },
+  "homepage": "https://github.com/digitalbazaar/bedrock-angular-authn-did-jwt#readme"
+}

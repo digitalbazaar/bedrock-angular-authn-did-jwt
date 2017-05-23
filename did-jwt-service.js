@@ -1,16 +1,8 @@
 /*!
- * Copyright (c) 2016 Digital Bazaar, Inc. All rights reserved.
+ * Copyright (c) 2016-2017 Digital Bazaar, Inc. All rights reserved.
  */
-define([], function() {
-
-'use strict';
-
-function register(module) {
-  module.service('brDidJwtService', factory);
-}
-
 /* @ngInject */
-function factory($http, config) {
+export default function factory($http, config) {
   var service = {};
 
   /**
@@ -50,7 +42,3 @@ function factory($http, config) {
 
   return service;
 }
-
-return register;
-
-});
