@@ -1,13 +1,16 @@
-<div ng-if="$ctrl.display.form">
-  <div class="row">
-    <div class="col-md-offset-3 col-md-6" style="padding: 0">
-      <h3>Email Login Token</h3>
-      <p>Please enter the email address you used when you setup your account so that
-      we may send you a login token.</p>
+<div ng-if="$ctrl.display.form"
+  layout="row"
+  layout-align="center center"
+  layout-xs="column">
+  <div flex-gt-sm="33" style="margin: 0px 15%;">
+    <div layout="row">
+      <div style="padding: 0">
+        <h3>Email Login Token</h3>
+        <p>Please enter the email address you used when you setup your account so that
+        we may send you a login token.</p>
+      </div>
     </div>
-  </div>
-  <form name="$ctrl.emailForm" class="form-horizontal">
-    <fieldset>
+    <form name="$ctrl.emailForm" class="form-horizontal">
       <br-input br-model="$ctrl.email"
         br-options="{
           name: 'email', label: 'Email',
@@ -39,38 +42,40 @@
           </p>
         </br-input-validation-errors>
       </br-input>
-    </fieldset>
-  </form>
-  <div class="row">
-    <div class="col-md-offset-3 col-md-6" style="padding: 0">
-      <button type="button"
-        ng-click="$ctrl.submit()"
-        ng-disabled="$ctrl.emailForm.$invalid"
-        class="btn btn-primary btn-block">
-        Send Token <i ng-show="$ctrl.loading" class="fa fa-refresh fa-spin"></i>
-      </button>
+    </form>
+    <div layout="row">
+      <div style="padding: 0">
+        <md-button class="md-raised md-primary"
+          ng-click="$ctrl.submit()"
+          ng-disabled="$ctrl.emailForm.$invalid">
+            Send Token <i ng-show="$ctrl.loading" class="fa fa-refresh fa-spin"></i>
+        </md-button>
+      </div>
     </div>
   </div>
 </div>
-<div ng-if="$ctrl.display.success" class="row">
-  <div class="col-md-12 text-center">
+<div ng-if="$ctrl.display.success"
+  layout="row"
+  layout-align="center center"
+  layout-xs="column">
+  <div>
     <h3>Email Sent</h3>
     <p>Please click the link provided in the email to login.</p>
   </div>
 </div>
-<div ng-if="$ctrl.display.retry">
-  <div class="row">
-    <div class="col-md-12 text-center">
+<div ng-if="$ctrl.display.retry"
+  layout="row"
+  layout-align="center center"
+  layout-xs="column">
+  <div layout="row">
+    <div>
       <h3>Token Login Failed</h3>
       <p>Your token may have expired, please try again.</p>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-offset-4 col-md-4">
-      <button ng-click="$ctrl.show('form')" type="button"
-        class="btn btn-primary btn-block">
-        Try Again
-      </button>
-    </div>
+  <div layout="row">
+    <md-button class="md-raised md-primary" ng-click="$ctrl.show('form')">
+      Try Again
+    </md-button>
   </div>
 </div>

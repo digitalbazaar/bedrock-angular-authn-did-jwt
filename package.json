@@ -4,7 +4,8 @@
   "description": "bedrock-angular-authn-did-jwt",
   "main": "index.js",
   "dependencies": {
-    "angular": "~1.6.4"
+    "bedrock-angular": "^4.0.0",
+    "bedrock-angular-material": "^1.0.0"
   },
   "bedrock": {
     "browserDependencies": "all"
