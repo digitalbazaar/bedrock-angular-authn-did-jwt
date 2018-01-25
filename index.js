@@ -5,7 +5,7 @@ import angular from 'angular';
 import DidJwtService from './did-jwt-service.js';
 import SendTokenComponent from './send-token-component.js';
 
-var module = angular.module('bedrock.authn-did-jwt', ['ngMaterial']);
+const module = angular.module('bedrock.authn-did-jwt', ['ngMaterial']);
 
 module.service('brDidJwtService', DidJwtService);
 module.component('brAuthnDidJwtSendToken', SendTokenComponent);

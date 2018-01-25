@@ -11,7 +11,7 @@ export default {
 
 /* @ngInject */
 function Ctrl(brDidJwtService, brAlertService) {
-  var self = this;
+  const self = this;
   self.email = '';
   self.display = {
     form: true,
@@ -19,29 +19,29 @@ function Ctrl(brDidJwtService, brAlertService) {
     success: false
   };
 
-  self.$onInit = function() {
+  self.$onInit = () => {
     if(self.showRetry) {
       _display('retry');
     }
   };
 
-  self.show = function(property) {
+  self.show = property => {
     _display(property);
   };
 
-  self.submit = function() {
+  self.submit = () => {
     brDidJwtService.sendToken(self.email)
-      .then(function() {
+      .then(() => {
         _display('success');
-      }).catch(function(err) {
+      }).catch(err => {
         brAlertService.add('error', err);
       });
   };
 
-  function _display(showProperty) {
-    Object.keys(self.display).forEach(function(propertyName) {
+  const _display = showProperty => {
+    Object.keys(self.display).forEach(propertyName => {
       self.display[propertyName] = false;
     });
     self.display[showProperty] = true;
-  }
+  };
 }
