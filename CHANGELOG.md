@@ -1,5 +1,8 @@
 # bedrock-angular-authn-did-jwt ChangeLog
 
+### Changed
+- **BREAKING**: Switch to material design.
+
 ## 2.0.0 - 2017-05-30
 
 ### Changed
