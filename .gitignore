@@ -1,0 +1,11 @@
+*.log
+*.py[co]
+*.sw[nop]
+*~
+.project
+.settings
+TAGS
+coverage
+logs
+node_modules
+reports
